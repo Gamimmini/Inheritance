@@ -4,68 +4,38 @@ namespace Draw
 {
     class Circle
     {
-        public double radius;
-        public string color;
+        public double Radius { get; set; }
+        public string Color { get; set; }
 
         public Circle(double radius, string color)
         {
-            this.radius = radius;
-            this.color = color;
-        }
-
-        public double GetRadius()
-        {
-            return radius;
-        }
-
-        public void SetRadius(double radius)
-        {
-            this.radius = radius;
-        }
-
-        public string GetColor()
-        {
-            return color;
-        }
-
-        public void SetColor(string color)
-        {
-            this.color = color;
+            Radius = radius;
+            Color = color;
         }
 
         public override string ToString()
         {
-            return $"Circle - Radius: {radius}, Color: {color} ";
+            return $"Circle - Radius: {Radius}, Color: {Color}";
         }
     }
 
     class Cylinder : Circle
     {
-        public double height;
+        public double Height { get; set; }
 
         public Cylinder(double radius, string color, double height) : base(radius, color)
         {
-            this.height = height;
-        }
-
-        public double GetHeight()
-        {
-            return height;
-        }
-
-        public void SetHeight(double height)
-        {
-            this.height = height;
+            Height = height;
         }
 
         public double GetVolume()
         {
-            return Math.PI * radius * radius * height;
+            return Math.PI * Radius * Radius * Height;
         }
 
         public override string ToString()
         {
-            return $"Cylinder - Radius: {GetRadius()}, Color: {GetColor()}, Height: {height}, Volume: {GetVolume()}";
+            return $"Cylinder - Radius: {Radius}, Color: {Color}, Height: {Height}, Volume: {GetVolume()}";
         }
     }
 

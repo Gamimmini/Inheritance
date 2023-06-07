@@ -4,72 +4,43 @@ namespace Point
 {
     class Point2D
     {
-        public float x;
-        public float y;
+        public float X { get; set; }
+        public float Y { get; set; }
 
         public Point2D(float x, float y)
         {
-            this.x = x;
-            this.y = y;
-        }
-
-        public float GetX()
-        {
-            return x;
-        }
-
-        public void SetX(float x)
-        {
-            this.x = x;
-        }
-
-        public float GetY()
-        {
-            return y;
-        }
-
-        public void SetY(float y)
-        {
-            this.y = y;
+            X = x;
+            Y = y;
         }
 
         public float[] GetXY()
         {
-            return new float[] { x, y };
+            return new float[] { X, Y };
         }
 
         public override string ToString()
         {
-            return $"Point2D - X: {x}, Y: {y} ";
+            return $"Point2D - X: {X}, Y: {Y}";
         }
     }
 
     class Point3D : Point2D
     {
-        public float z;
+        public float Z { get; set; }
 
         public Point3D(float x, float y, float z) : base(x, y)
         {
-            this.z = z;
+            Z = z;
         }
 
-        public float GetZ()
-        {
-            return z;
-        }
-
-        public void SetZ(float z)
-        {
-            this.z = z;
-        }
         public float[] GetXYZ()
         {
-            return new float[] { GetX(), GetY(), z };
+            return new float[] { X, Y, Z };
         }
 
         public override string ToString()
         {
-            return $"Point3D - X: {GetX()}, Y: {GetY()}, Z: {z}";
+            return $"Point3D - X: {X}, Y: {Y}, Z: {Z}";
         }
     }
 
